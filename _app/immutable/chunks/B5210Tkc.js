@@ -1,0 +1,1 @@
+import{w as u}from"./BS8de_LS.js";function d(){const{subscribe:i,update:s}=u([]),t=(o,r="info",e=3500)=>{const n=crypto.randomUUID();s(a=>[...a,{id:n,message:o,variant:r}]),setTimeout(()=>c(n),e)},c=o=>s(r=>r.filter(e=>e.id!==o));return{subscribe:i,success:o=>t(o,"success"),error:o=>t(o,"error",5e3),info:o=>t(o,"info"),remove:c}}const m=d();export{m as t};
