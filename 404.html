@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting...</title>
+    <script>
+      (function () {
+        var base = '/PWA-installability-test-SvelteKit';
+        var path = window.location.pathname || '/';
+        var search = window.location.search || '';
+        var hash = window.location.hash || '';
+
+        // Keep direct file requests as real 404s.
+        if (/\.[a-zA-Z0-9]+$/.test(path)) {
+          return;
+        }
+
+        var suffix = path.indexOf(base) === 0 ? path.slice(base.length) : path;
+        if (!suffix.startsWith('/')) suffix = '/' + suffix;
+
+        var target = base + '/?p=' + encodeURIComponent(suffix + search + hash);
+        window.location.replace(target);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -8,30 +8,45 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="BarberBook" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link href="/_app/immutable/entry/start.T4azpUqv.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/Dirtw4z6.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/COhmRbgJ.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/CGi1GiES.js" rel="modulepreload">
-		<link href="/_app/immutable/entry/app.DTSmMb5h.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/CDphzItX.js" rel="modulepreload">
+    <link rel="manifest" href="/PWA-installability-test-SvelteKit/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/PWA-installability-test-SvelteKit/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/PWA-installability-test-SvelteKit/favicon.png" />
+    <script>
+      (function () {
+        var base = '/PWA-installability-test-SvelteKit';
+        var params = new URLSearchParams(window.location.search);
+        var pendingPath = params.get('p');
+        if (!pendingPath) return;
+
+        var clean = pendingPath.startsWith('/') ? pendingPath : '/' + pendingPath;
+        params.delete('p');
+        var rest = params.toString();
+        var query = rest ? '?' + rest : '';
+        window.history.replaceState(null, '', base + clean + query);
+      })();
+    </script>
+    <link href="/PWA-installability-test-SvelteKit/_app/immutable/entry/start.DBoa2qzg.js" rel="modulepreload">
+		<link href="/PWA-installability-test-SvelteKit/_app/immutable/chunks/M20hPxAr.js" rel="modulepreload">
+		<link href="/PWA-installability-test-SvelteKit/_app/immutable/chunks/COhmRbgJ.js" rel="modulepreload">
+		<link href="/PWA-installability-test-SvelteKit/_app/immutable/chunks/CGi1GiES.js" rel="modulepreload">
+		<link href="/PWA-installability-test-SvelteKit/_app/immutable/entry/app.dOdZjbi6.js" rel="modulepreload">
+		<link href="/PWA-installability-test-SvelteKit/_app/immutable/chunks/CDphzItX.js" rel="modulepreload">
 		
   </head>
   <body data-sveltekit-preload-data="hover">
     <div id="app">
 			<script>
 				{
-					__sveltekit_1l7sh6n = {
-						base: ""
+					__sveltekit_w7usi9 = {
+						base: "/PWA-installability-test-SvelteKit",
+						assets: "/PWA-installability-test-SvelteKit"
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.T4azpUqv.js"),
-						import("/_app/immutable/entry/app.DTSmMb5h.js")
+						import("/PWA-installability-test-SvelteKit/_app/immutable/entry/start.DBoa2qzg.js"),
+						import("/PWA-installability-test-SvelteKit/_app/immutable/entry/app.dOdZjbi6.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});
